@@ -1,5 +1,6 @@
 $(function() {
-	let scrollOld = 0;
+	let scrollOld = 0,
+		windowWidht = $(window).outerWidth();
 
 	/* Scroll */
 	$('[data-scroll]').click(function(event) {
@@ -71,9 +72,12 @@ $(function() {
 	})
 
 	$('.nav__link').click(function(event) {
-		$('.nav__burger,.header__nav').removeClass('active');
-		$('.header__footer,.mobile__arrow').removeClass('active');
-		$('body').removeClass('lock');
+		if (windowWidht < 750) {
+			$('.nav__burger,.header__nav').removeClass('active');
+			$('.header__footer,.mobile__arrow').removeClass('active');
+			$('body').removeClass('lock');
+		}
+		
 	})
 
 	/* Spoiler */

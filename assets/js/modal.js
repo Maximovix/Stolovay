@@ -69,6 +69,8 @@ function bodyLock() {
 	body.style.paddingRight = lockPaddingValue;
 	body.classList.add('lock');
 
+	console.log('1');
+
 	unlock = false;
 	setTimeout(function () {
 		unlock = true;
