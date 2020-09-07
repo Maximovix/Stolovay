@@ -9,6 +9,9 @@ $(function() {
 			blockOffSet = $(blockID).offset().top,
 			heightHeader = $('.header').outerHeight();
 
+		$('.header__footer,.mobile__arrow').removeClass('active');
+		$('.nav__burger,.header__nav').removeClass('active');
+		$('body').removeClass('lock');
 
 		$('html,body').animate({
 			scrollTop: blockOffSet - heightHeader,
@@ -70,7 +73,7 @@ $(function() {
 	$('.nav__link').click(function(event) {
 		$('.nav__burger,.header__nav').removeClass('active');
 		$('.header__footer,.mobile__arrow').removeClass('active');
-		$('body').removeClass('hide');
+		$('body').removeClass('lock');
 	})
 
 	/* Spoiler */
