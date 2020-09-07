@@ -88,10 +88,16 @@ html.lock {
 
 .header {
   width: 100%;
+  height: auto;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 50;
+}
+
+.header__desktop {
+  width: 100%;
+  position: relative;
 }
 
 .header__nav {
@@ -146,8 +152,9 @@ html.lock {
 
 .header__footer {
   padding: 1.1rem;
-  position: relative;
-  top: 0;
+  width: 100%;
+  position: absolute;
+  top: 100%;
   z-index: 10;
   background-color: #fff;
   -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -158,7 +165,7 @@ html.lock {
 }
 
 .header__footer.hide {
-  top: -300px;
+  top: -100%;
 }
 
 .nav {
@@ -1418,9 +1425,9 @@ html.lock {
   top: 45%;
   left: 50%;
   z-index: 10;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -45%);
+      -ms-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
 }
 
 .about__logo {
@@ -2432,21 +2439,22 @@ html.lock {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 60%;
             flex: 0 0 60%;
+    padding-top: 2rem;
   }
 
   .intro__portfolio {
     font-size: 2.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 4.3rem;
   }
 
   .intro__title {
     font-size: 4rem;
-    margin-bottom: 2.7rem;
+    margin-bottom: 2.1rem;
   }
 
   .intro__subtitle {
     font-size: 2.5rem;
-    margin-bottom: 2.7rem;
+    margin-bottom: 3.1rem;
     line-height: 1.5;
   }
 
@@ -2456,12 +2464,21 @@ html.lock {
     font-size: 3rem;
   }
 
+  .intro__image {
+    margin: 0;
+    width: 274px;
+  }
+
+  .intro__image img {
+    width: 100%;
+  }
+
   .swiper-container {
     height: 560px;
   }
 
   .swiper-slide {
-    padding: 8.7rem 3rem 0;
+    padding: 6.5rem 3.7rem 0 3rem;
   }
 
   .swiper-button-next,
@@ -2678,6 +2695,7 @@ html.lock {
   .contact__list {
     display: none;
     margin-top: 1rem;
+    margin-left: 2rem;
   }
 
   .contact__link {
@@ -2754,6 +2772,11 @@ html.lock {
     display: none;
   }
 
+  .mobile__svg {
+    width: 4rem;
+    height: 4rem;
+  }
+
   .title {
     font-size: 4rem;
   }
@@ -2783,12 +2806,22 @@ html.lock {
     font-size: 2rem;
   }
 
+  .intro__image {
+    margin-left: 1.5rem;
+  }
+
   .brands__content {
     height: 7.1rem;
   }
 
   .brands__content img {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .swiper-slide {
+    padding: 6.5rem 3rem;
   }
 }
 
