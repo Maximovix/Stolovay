@@ -2,6 +2,10 @@ $(function() {
 	let scrollOld = 0,
 		windowWidht = $(window).outerWidth();
 
+	$(window).on("orientationchange",function(){
+	  	location.reload();
+	});
+
 	/* Scroll */
 	$('[data-scroll]').click(function(event) {
 		event.preventDefault();
@@ -81,14 +85,16 @@ $(function() {
 	})
 
 	/* Spoiler */
-	$('.contact__header').click(function(event) {
-		event.preventDefault();
+	if (windowWidht <= 750) {
+		$('.contact__header').click(function(event) {
+			event.preventDefault();
 
-		if ($('.contact__inner').hasClass('spoiler')) {
-			$('.contact__header').not($(this)).removeClass('active');
-			$('.contact__list').not($(this).next()).slideUp(300);
-		}
+			if ($('.contact__inner').hasClass('spoiler')) {
+				$('.contact__header').not($(this)).removeClass('active');
+				$('.contact__list').not($(this).next()).slideUp(300);
+			}
 
-		$(this).toggleClass('active').next().slideToggle(300);
-	});
+			$(this).toggleClass('active').next().slideToggle(300);
+		});
+	}
 })
